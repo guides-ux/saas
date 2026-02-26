@@ -1,0 +1,258 @@
+<!-- =========================
+     terms.html
+========================= -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms & Conditions — Work Management Guide</title>
+  <meta name="description" content="Terms and Conditions for this independent work management guide website." />
+
+  <style>
+    :root{
+      --bg:#fbfbfd;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --line:rgba(15,23,42,.12);
+
+      --c1:#7b2cff;
+      --c2:#ff4fd8;
+
+      --shadow: 0 16px 44px rgba(15,23,42,.10);
+      --max:1120px;
+      --radius:28px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(123,44,255,.10), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(255,79,216,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 0%, rgba(99,102,241,.06), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 50px}
+
+    /* Navbar */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(255,255,255,.82);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(15,23,42,.10);
+    }
+    .nav__inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:1000; white-space:nowrap;
+    }
+    .logoMark{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      box-shadow:0 0 0 6px rgba(123,44,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:1000; font-size:14px;
+      border:1px solid rgba(255,255,255,.22);
+      flex:0 0 auto;
+    }
+    .nav__right{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
+    .pill{
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
+      background:rgba(255,255,255,.9);
+      white-space:nowrap;
+    }
+    .navlinks{display:flex; gap:8px; flex-wrap:wrap; align-items:center;}
+    .navlinks a{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.9);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .navlinks a:hover{transform:translateY(-1px); filter:brightness(1.02)}
+    .navlinks a.active{
+      color:var(--text);
+      border-color: rgba(123,44,255,.22);
+      box-shadow: 0 12px 30px rgba(123,44,255,.10);
+    }
+
+    /* Page card */
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-top:16px;
+    }
+    h1{
+      margin:0 0 6px;
+      font-size:34px;
+      letter-spacing:-.6px;
+      line-height:1.12;
+    }
+    .meta{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    h2{
+      margin:18px 0 6px;
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+    p,li{color:var(--muted); font-size:14px}
+    ul{margin:8px 0 0 18px}
+    .note{
+      margin-top:14px;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(123,44,255,.18);
+      background:linear-gradient(135deg, rgba(123,44,255,.07), rgba(255,79,216,.05));
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footer{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      border-top:1px solid rgba(15,23,42,.10);
+      padding-top:12px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .footer a{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.9);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <div class="brand">
+        <div class="logoMark">CU</div>
+        <div>Work Management Guide</div>
+      </div>
+      <div class="nav__right">
+   
+        <nav class="navlinks" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="comparison.html">Comparison</a>
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy</a>
+          <a class="active" href="terms.html">Terms</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h1>Terms & Conditions</h1>
+      <p class="meta">Last updated: 2026</p>
+
+      <p>
+        These Terms & Conditions govern your use of this independent guide website (“we”, “our”, “this site”).
+        By accessing or using this site, you agree to these Terms.
+      </p>
+
+      <h2>1) Independent guide (not official)</h2>
+      <p>
+        This site is an independent informational guide and is not affiliated with, endorsed by, or sponsored by ClickUp.
+        Product names and trademarks belong to their respective owners.
+      </p>
+
+      <h2>2) No professional advice</h2>
+      <p>
+        Content is provided for general informational purposes only and should not be considered professional, legal,
+        financial, or business advice. Always verify details on the provider’s official website.
+      </p>
+
+      <h2>3) Affiliate disclosure</h2>
+      <p>
+        We may receive compensation from partner links. This may affect how links are presented, but we aim to keep the
+        content clear and helpful.
+      </p>
+
+      <h2>4) External links</h2>
+      <p>
+        This site may link to third-party websites. We are not responsible for third-party content, policies, or
+        availability. Use third-party sites at your own risk.
+      </p>
+
+      <h2>5) Intellectual property</h2>
+      <p>
+        Site design, layout, and original text may be protected by applicable laws. You may not copy, reproduce, or
+        redistribute site content without permission, except where allowed by law.
+      </p>
+
+      <h2>6) Disclaimer of warranties</h2>
+      <p>
+        This site is provided “as is” without warranties of any kind. We do not guarantee accuracy, completeness, or
+        uninterrupted access.
+      </p>
+
+      <h2>7) Limitation of liability</h2>
+      <p>
+        To the maximum extent permitted by law, we will not be liable for any direct or indirect damages arising from
+        your use of this site or reliance on any content.
+      </p>
+
+      <h2>8) Changes to these Terms</h2>
+      <p>
+        We may update these Terms from time to time. Continued use of the site after changes means you accept the updated Terms.
+      </p>
+
+      <h2>9) Contact</h2>
+      <p>
+        If you have questions about these Terms, contact the site owner using the contact method provided on the main
+        website or domain.
+      </p>
+
+      <div class="note">
+       Affiliate disclosure: This website contains affiliate links. If you click a link and sign up or purchase, we may earn a commission at no additional cost to you. We do not claim to represent any provider officially. Product names, logos, and trademarks are the property of their respective owners and are used only for identification and comparison. Always verify features, pricing, and terms on the provider’s website before making a decision.
+This page is NOT the official Atlassian website.
+      </div>
+
+      <div class="footer">
+        <div>© 2026 Work Management Guide</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <a href="index.html">Back to Home</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

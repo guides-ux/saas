@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClickUp — Comparison</title>
+  <meta name="description" content="Compare key ClickUp work management features vs separate tools. Open plans & pricing on the provider website." />
+
+  <style>
+    :root{
+      --bg:#fbfbfd;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --line:rgba(15,23,42,.12);
+
+      --c1:#7b2cff;
+      --c2:#ff4fd8;
+      --green:#22c55e;
+
+      --shadow: 0 16px 44px rgba(15,23,42,.10);
+      --max:1120px;
+      --radius:28px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(123,44,255,.10), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(255,79,216,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 0%, rgba(99,102,241,.06), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 90px}
+
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:6px 0 16px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:1000}
+    .logoMark{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      box-shadow:0 0 0 6px rgba(123,44,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:1000; font-size:14px;
+      border:1px solid rgba(255,255,255,.22);
+    }
+
+    .nav{display:flex; gap:10px; flex-wrap:wrap}
+    .nav a{
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      background:rgba(255,255,255,.85);
+      white-space:nowrap;
+      transition:.18s ease;
+    }
+    .nav a:hover{transform:translateY(-1px); filter:brightness(1.02)}
+    .nav a.active{
+      color:var(--text);
+      border-color: rgba(123,44,255,.22);
+      box-shadow: 0 12px 30px rgba(123,44,255,.10);
+    }
+
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-top:10px;
+    }
+
+    h1{
+      margin:0 0 6px;
+      font-size:28px;
+      letter-spacing:-.4px;
+    }
+    .sub{margin:0; color:var(--muted); font-size:14px}
+
+    /* Comparison table */
+    .tableWrap{
+      margin-top:14px;
+      overflow:auto;
+      border-radius:18px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.95);
+    }
+    table{width:100%; border-collapse:collapse; min-width:860px}
+    th,td{padding:12px; text-align:left; border-top:1px solid rgba(15,23,42,.08)}
+    th{background:rgba(15,23,42,.03); border-top:none; font-weight:1000}
+    td{color:var(--muted); font-size:14px}
+    .yes{color:var(--green); font-weight:1000}
+    .mid{color:#b45309; font-weight:1000}
+
+    /* Pricing strip */
+    .offerStrip{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      padding:12px 12px;
+      border-radius:20px;
+      border:1px solid rgba(123,44,255,.20);
+      background:linear-gradient(135deg, rgba(123,44,255,.08), rgba(255,79,216,.06));
+      box-shadow: 0 14px 34px rgba(123,44,255,.08);
+    }
+    .offerCTA{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:1000;
+      font-size:13px;
+      color:#fff;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow: 0 18px 40px rgba(123,44,255,.18);
+      white-space:nowrap;
+    }
+    .offerTag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.85);
+      font-weight:950;
+      font-size:13px;
+      color:#111827;
+      white-space:nowrap;
+    }
+    .offerDot{
+      width:10px; height:10px; border-radius:50%;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      box-shadow:0 0 0 5px rgba(123,44,255,.10);
+      flex:0 0 auto;
+    }
+
+    /* Image + button card (moved here) */
+    .sideCard{
+      margin-top:14px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.92);
+      border-radius:22px;
+      padding:16px;
+    }
+    .img{
+      width:100%;
+      aspect-ratio: 16/11;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(15,23,42,.10);
+      background:#fff;
+      box-shadow: 0 14px 30px rgba(15,23,42,.08);
+    }
+    .img img{width:100%; height:100%; object-fit:cover; display:block}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:16px;
+      font-weight:1000;
+      border:1px solid rgba(15,23,42,.12);
+      cursor:pointer;
+      transition:.18s ease;
+      user-select:none;
+      background:#fff;
+      width:100%;
+      margin-top:12px;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 44px rgba(123,44,255,.18);
+    }
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.02)}
+
+    .disclaimer{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+      opacity:.95;
+    }
+  </style>
+  <script type="text/javascript" src="https://inpmz.ttrk.io/track.js?rtkcmpid=6997f331a801952e7af31036"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logoMark">CU</div>
+        <div>Work Management Guide</div>
+      </div>
+
+      <div class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a class="active" href="comparison.html">Comparison</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h1>Feature comparison</h1>
+      <p class="sub">A quick checklist to compare a modern work OS vs scattered tools.</p>
+
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>What teams compare</th>
+              <th>Work management platform</th>
+              <th>Separate tools</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tasks + collaboration</td>
+              <td class="yes">✓ Included</td>
+              <td class="mid">Multiple apps</td>
+            </tr>
+            <tr>
+              <td>Docs & knowledge base</td>
+              <td class="yes">✓ Included</td>
+              <td class="mid">Scattered files</td>
+            </tr>
+            <tr>
+              <td>Dashboards & reporting</td>
+              <td class="yes">✓ Included</td>
+              <td class="mid">Manual reporting</td>
+            </tr>
+            <tr>
+              <td>Automation</td>
+              <td class="yes">✓ Available</td>
+              <td class="mid">Extra tools</td>
+            </tr>
+            <tr>
+              <td>Multiple project views</td>
+              <td class="yes">✓ Included</td>
+              <td class="mid">Limited</td>
+            </tr>
+            <tr>
+              <td>Team workflow management</td>
+              <td class="yes">✓ Included</td>
+              <td class="mid">Hard to scale</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="offerStrip">
+        <a class="offerCTA" id="ctaPricing" href="#" rel="nofollow noopener" target="_blank">See Pricing & Plans →</a>
+        <div class="offerTag"><span class="offerDot"></span>Pricing varies by team size</div>
+        <div class="offerTag"><span class="offerDot"></span>Confirm current offers</div>
+        <div class="offerTag"><span class="offerDot"></span>View plan details on provider site</div>
+      </div>
+
+      <!-- Moved here: image + price button section -->
+      <div class="sideCard">
+        <div class="img">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=70"
+            alt="Team planning work"
+            loading="lazy"
+          />
+        </div>
+
+        <a class="btn primary" id="ctaSide" href="#" rel="nofollow noopener" target="_blank">
+          Open ClickUp Plans →
+        </a>
+
+        <div class="disclaimer">
+          Signup and checkout happen on the ClickUp website.
+        </div>
+      </div>
+
+        <div class="disclaimer" style="margin-top:12px">
+       Affiliate disclosure: This website contains affiliate links. If you click a link and sign up or purchase, we may earn a commission at no additional cost to you. We do not claim to represent any provider officially. Product names, logos, and trademarks are the property of their respective owners and are used only for identification and comparison. Always verify features, pricing, and terms on the provider’s website before making a decision.
+This page is NOT the official Atlassian website.<br>
+ <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms and Condition</a></p><br>
+        This page is NOT the official ClickUp website.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const OUT_URL = "https://inpmz.ttrk.io/click";
+    const ctas = ["ctaPricing","ctaSide"];
+    ctas.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = OUT_URL;
+    });
+
+    function trackOutbound(label){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "outbound_click",
+        outbound_label: label,
+        outbound_url: OUT_URL
+      });
+    }
+    ctas.forEach(id=>{
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.addEventListener("click", () => trackOutbound(id));
+    });
+  </script>
+</body>
+</html>

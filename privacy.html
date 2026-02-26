@@ -1,0 +1,255 @@
+<!-- =========================
+     privacy.html
+========================= -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Work Management Guide</title>
+  <meta name="description" content="Privacy Policy for this independent work management guide website." />
+
+  <style>
+    :root{
+      --bg:#fbfbfd;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --line:rgba(15,23,42,.12);
+
+      --c1:#7b2cff;
+      --c2:#ff4fd8;
+
+      --shadow: 0 16px 44px rgba(15,23,42,.10);
+      --max:1120px;
+      --radius:28px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(123,44,255,.10), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(255,79,216,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 0%, rgba(99,102,241,.06), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 50px}
+
+    /* Navbar (same look) */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(255,255,255,.82);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(15,23,42,.10);
+    }
+    .nav__inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:1000; white-space:nowrap;
+    }
+    .logoMark{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      box-shadow:0 0 0 6px rgba(123,44,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:1000; font-size:14px;
+      border:1px solid rgba(255,255,255,.22);
+      flex:0 0 auto;
+    }
+    .nav__right{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
+    .pill{
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
+      background:rgba(255,255,255,.9);
+      white-space:nowrap;
+    }
+    .navlinks{display:flex; gap:8px; flex-wrap:wrap; align-items:center;}
+    .navlinks a{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.9);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .navlinks a:hover{transform:translateY(-1px); filter:brightness(1.02)}
+    .navlinks a.active{
+      color:var(--text);
+      border-color: rgba(123,44,255,.22);
+      box-shadow: 0 12px 30px rgba(123,44,255,.10);
+    }
+
+    /* Page card */
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-top:16px;
+    }
+    h1{
+      margin:0 0 6px;
+      font-size:34px;
+      letter-spacing:-.6px;
+      line-height:1.12;
+    }
+    .meta{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    h2{
+      margin:18px 0 6px;
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+    p,li{color:var(--muted); font-size:14px}
+    ul{margin:8px 0 0 18px}
+    .note{
+      margin-top:14px;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(123,44,255,.18);
+      background:linear-gradient(135deg, rgba(123,44,255,.07), rgba(255,79,216,.05));
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footer{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      border-top:1px solid rgba(15,23,42,.10);
+      padding-top:12px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .footer a{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.9);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <div class="brand">
+        <div class="logoMark">CU</div>
+        <div>Work Management Guide</div>
+      </div>
+      <div class="nav__right">
+        <div class="pill">Independent • Updated 2026</div>
+        <nav class="navlinks" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="comparison.html">Comparison</a>
+          <a href="faq.html">FAQ</a>
+          <a class="active" href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: 2026</p>
+
+      <p>
+        This Privacy Policy explains how this independent guide website (“we”, “our”, “this site”) collects, uses, and
+        protects information when you visit our pages. This site is not the official ClickUp website.
+      </p>
+
+      <h2>1) Information we collect</h2>
+      <ul>
+        <li><b>Basic usage data:</b> like pages viewed, browser type, device type, and approximate location (country/region).</li>
+        <li><b>Cookies:</b> small files used for analytics, performance, and remembering preferences (if enabled).</li>
+        <li><b>Outbound click data:</b> we may log which buttons you click that redirect to the provider website.</li>
+      </ul>
+
+      <h2>2) How we use information</h2>
+      <ul>
+        <li>To understand traffic and improve page performance and user experience.</li>
+        <li>To measure outbound clicks and conversions for partner/affiliate reporting (if applicable).</li>
+        <li>To detect abuse, fraud, or suspicious activity.</li>
+      </ul>
+
+      <h2>3) Third-party links and partner tracking</h2>
+      <p>
+        This site contains links to third-party websites (e.g., the provider’s official website). When you click an
+        outbound link, you may be redirected to a third-party site that has its own privacy practices. We encourage you
+        to review their policies.
+      </p>
+
+      <h2>4) Cookies and analytics</h2>
+      <p>
+        We may use cookies and analytics tools to understand how visitors use this site. You can control cookies through
+        your browser settings. Disabling cookies may affect some site functionality.
+      </p>
+
+      <h2>5) Data sharing</h2>
+      <p>
+        We do not sell personal information. We may share aggregated (non-identifying) analytics with partners or service
+        providers to measure performance. We may also share information if required by law or to protect rights/safety.
+      </p>
+
+      <h2>6) Data security</h2>
+      <p>
+        We take reasonable steps to protect information, but no website can guarantee 100% security. Please use the site
+        at your own discretion.
+      </p>
+
+      <h2>7) Children’s privacy</h2>
+      <p>
+        This site is not intended for children under 13 (or the applicable age in your jurisdiction). We do not knowingly
+        collect personal data from children.
+      </p>
+
+      <h2>8) Contact</h2>
+      <p>
+        If you have questions about this Privacy Policy, contact the site owner using the contact method provided on the
+        main website or domain.
+      </p>
+
+      <div class="note">
+        <b>Disclosure:</b> We may earn a commission from partner links. Product names and trademarks belong to their owners.
+      </div>
+
+      <div class="footer">
+        <div>© 2026 Work Management Guide</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <a href="index.html">Back to Home</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

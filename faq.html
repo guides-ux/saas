@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClickUp — FAQ</title>
+  <meta name="description" content="Frequently asked questions about ClickUp. Independent guide page. Buttons open the provider website." />
+
+  <style>
+    :root{
+      --bg:#fbfbfd;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --line:rgba(15,23,42,.12);
+
+      --c1:#7b2cff;
+      --c2:#ff4fd8;
+
+      --shadow: 0 16px 44px rgba(15,23,42,.10);
+      --max:1120px;
+      --radius:28px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(123,44,255,.10), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(255,79,216,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 0%, rgba(99,102,241,.06), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 60px}
+
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:6px 0 16px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:1000}
+    .logoMark{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      box-shadow:0 0 0 6px rgba(123,44,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:1000; font-size:14px;
+      border:1px solid rgba(255,255,255,.22);
+    }
+
+    .nav{display:flex; gap:10px; flex-wrap:wrap}
+    .nav a{
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      background:rgba(255,255,255,.85);
+      white-space:nowrap;
+      transition:.18s ease;
+    }
+    .nav a:hover{transform:translateY(-1px); filter:brightness(1.02)}
+    .nav a.active{
+      color:var(--text);
+      border-color: rgba(123,44,255,.22);
+      box-shadow: 0 12px 30px rgba(123,44,255,.10);
+    }
+
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-top:10px;
+    }
+
+    h1{margin:0 0 8px; font-size:22px; letter-spacing:-.2px}
+
+    details{
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.95);
+      border-radius:16px;
+      padding:14px;
+    }
+    summary{cursor:pointer; font-weight:1000; color:var(--text)}
+    details p{margin:10px 0 0; color:var(--muted); font-size:14px}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:16px;
+      font-weight:1000;
+      border:1px solid rgba(15,23,42,.12);
+      cursor:pointer;
+      transition:.18s ease;
+      user-select:none;
+      background:#fff;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 44px rgba(123,44,255,.18);
+    }
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.02)}
+
+    .disclaimer{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:12px;
+      opacity:.95;
+    }
+  </style>
+  <script type="text/javascript" src="https://inpmz.ttrk.io/track.js?rtkcmpid=6997f331a801952e7af31036"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logoMark">CU</div>
+        <div>Work Management Guide</div>
+      </div>
+
+      <div class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="comparison.html">Comparison</a>
+        <a class="active" href="faq.html">FAQ</a>
+      </div>
+    </div>
+
+    <div class="panel" id="faq">
+      <h1>FAQ</h1>
+
+      <div style="display:grid; gap:10px; margin-top:10px">
+        <details>
+          <summary>Is this the official ClickUp website?</summary>
+          <p>No. This is an independent guide page. Buttons open the provider website in a new tab.</p>
+        </details>
+
+        <details>
+          <summary>Is ClickUp good for project management?</summary>
+          <p>ClickUp is widely used for tasks, project workflows, docs and collaboration. Confirm features and plan details on the provider website.</p>
+        </details>
+
+        <details>
+          <summary>Does it include docs and dashboards?</summary>
+          <p>Many ClickUp plans include docs and dashboards. Availability can vary by plan — confirm on the provider website.</p>
+        </details>
+
+        <details>
+          <summary>Where do I see plans and pricing?</summary>
+          <p>Plans and pricing can change. Use the provider website to view the latest pricing and current offers.</p>
+        </details>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px">
+        <a class="btn primary" id="ctaFAQ" href="#" rel="nofollow noopener" target="_blank">
+          Visit ClickUp → (Official Site)
+        </a>
+      </div>
+
+        <div class="disclaimer" style="margin-top:12px">
+       Affiliate disclosure: This website contains affiliate links. If you click a link and sign up or purchase, we may earn a commission at no additional cost to you. We do not claim to represent any provider officially. Product names, logos, and trademarks are the property of their respective owners and are used only for identification and comparison. Always verify features, pricing, and terms on the provider’s website before making a decision.
+This page is NOT the official Atlassian website.<br>
+ <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms and Condition</a></p><br>
+        This page is NOT the official ClickUp website.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const OUT_URL = "https://inpmz.ttrk.io/click";
+    const ctaFAQ = document.getElementById("ctaFAQ");
+    if (ctaFAQ) ctaFAQ.href = OUT_URL;
+
+    function trackOutbound(label){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "outbound_click",
+        outbound_label: label,
+        outbound_url: OUT_URL
+      });
+    }
+    if (ctaFAQ) ctaFAQ.addEventListener("click", () => trackOutbound("ctaFAQ"));
+  </script>
+</body>
+</html>

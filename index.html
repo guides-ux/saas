@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClickUp — Project Management & Work OS</title>
+  <meta name="description" content="Independent guide to ClickUp for project management, tasks, docs and team collaboration. Compare key features below, then open plans and pricing on the official website." />
+
+  <style>
+    :root{
+      --bg:#fbfbfd;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --line:rgba(15,23,42,.12);
+
+      --c1:#7b2cff;
+      --c2:#ff4fd8;
+      --green:#22c55e;
+
+      --shadow: 0 16px 44px rgba(15,23,42,.10);
+      --shadow2: 0 18px 45px rgba(123,44,255,.10);
+      --max:1120px;
+      --radius:28px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(123,44,255,.10), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(255,79,216,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 0%, rgba(99,102,241,.06), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 110px}
+
+    /* ===== NAVBAR ===== */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(255,255,255,.82);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(15,23,42,.10);
+    }
+    .nav__inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:1000;
+      white-space:nowrap;
+    }
+    .logoMark{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      box-shadow:0 0 0 6px rgba(123,44,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:1000; font-size:14px;
+      border:1px solid rgba(255,255,255,.22);
+      flex:0 0 auto;
+    }
+    .nav__right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
+      background:rgba(255,255,255,.9);
+      white-space:nowrap;
+    }
+    .navlinks{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .navlinks a{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.9);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .navlinks a:hover{transform:translateY(-1px); filter:brightness(1.02)}
+    .navlinks a.active{
+      color:var(--text);
+      border-color: rgba(123,44,255,.22);
+      box-shadow: 0 12px 30px rgba(123,44,255,.10);
+    }
+
+    /* ===== PANEL ===== */
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-top:16px;
+    }
+
+    /* ===== HERO 2-COL (LEFT CONTENT + RIGHT SINGLE IMAGE) ===== */
+    .hero2{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media(max-width:900px){ .hero2{grid-template-columns:1fr} }
+
+    h1{
+      margin:0 0 10px;
+      font-size:44px;
+      line-height:1.06;
+      letter-spacing:-.9px;
+    }
+    @media(max-width:520px){ h1{font-size:32px} }
+
+    .hglow{
+      background: linear-gradient(135deg, var(--c1), var(--c2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow: 0 18px 40px rgba(123,44,255,.12);
+    }
+
+    .sub{
+      color:var(--muted);
+      font-size:15px;
+      margin:0 0 14px;
+      max-width:72ch;
+    }
+
+    .btnrow{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:1000;
+      border:1px solid rgba(15,23,42,.12);
+      cursor:pointer;
+      transition:.18s ease;
+      user-select:none;
+      background:#fff;
+      font-size:13px;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 44px rgba(123,44,255,.18);
+    }
+    .btn.secondary{background:rgba(255,255,255,.92); color:var(--text)}
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.02)}
+
+    .disclosure{
+      margin:12px 0 0;
+      color:var(--muted);
+      font-size:12px;
+      opacity:.95;
+    }
+
+    /* Offer strip */
+    .offerStrip{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      padding:12px 12px;
+      border-radius:20px;
+      border:1px solid rgba(123,44,255,.18);
+      background:linear-gradient(135deg, rgba(123,44,255,.08), rgba(255,79,216,.06));
+      box-shadow: var(--shadow2);
+    }
+    .offerStrip.pink{
+      border-color: rgba(255,79,216,.20);
+      background:linear-gradient(135deg, rgba(255,79,216,.06), rgba(123,44,255,.06));
+    }
+    .offerCTA{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:1000;
+      font-size:13px;
+      color:#fff;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow: 0 18px 40px rgba(123,44,255,.18);
+      white-space:nowrap;
+    }
+    .offerTag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.85);
+      font-weight:950;
+      font-size:13px;
+      color:#111827;
+      white-space:nowrap;
+    }
+    .offerDot{
+      width:10px; height:10px; border-radius:50%;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      box-shadow:0 0 0 5px rgba(123,44,255,.10);
+      flex:0 0 auto;
+    }
+
+    /* Right image */
+    .hero2__right{
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.92);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow: 0 14px 30px rgba(15,23,42,.08);
+      min-height: 340px;
+      display:flex;                 /* ✅ added */
+      flex-direction:column;        /* ✅ added */
+    }
+    .hero2__right img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      flex:1 1 auto;               /* ✅ added */
+    }
+
+    /* ===== NEW: Keyword box on right side ===== */
+    .kwBox{
+      border-top:1px solid rgba(15,23,42,.10);
+      padding:14px 14px 16px;
+      background:linear-gradient(135deg, rgba(123,44,255,.06), rgba(255,79,216,.05));
+    }
+    .kwTitle{
+      margin:0 0 10px;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:900;
+      letter-spacing:.2px;
+      text-transform:uppercase;
+    }
+    .kwTags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .kwTag{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.86);
+      font-size:12px;
+      font-weight:800;
+      color:#111827;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .kwTag:hover{
+      transform:translateY(-1px);
+      border-color: rgba(123,44,255,.22);
+      box-shadow: 0 12px 30px rgba(123,44,255,.10);
+      background:#fff;
+    }
+
+    /* ===== Trust cards (optional, below) ===== */
+    .trustBar{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+    }
+    @media(max-width:900px){ .trustBar{grid-template-columns:1fr} }
+    .trust{
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.92);
+      border-radius:18px;
+      padding:14px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .ico{
+      width:34px; height:34px;
+      border-radius:12px;
+      background:linear-gradient(135deg, rgba(123,44,255,.12), rgba(255,79,216,.10));
+      border:1px solid rgba(123,44,255,.18);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:1000;
+      color:#111827;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .trust b{display:block; font-size:13px}
+    .trust span{color:var(--muted); font-size:12px}
+
+    /* ===== NEW BOTTOM SECTION (FULL-WIDTH IMAGE + FEATURE LIST) ===== */
+    .bottomSection{
+      margin-top:14px;
+      display:grid;
+      gap:12px;
+    }
+    .bottomImg{
+      width:100%;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.92);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow: 0 14px 30px rgba(15,23,42,.08);
+      aspect-ratio: 16/7;
+    }
+    @media(max-width:900px){ .bottomImg{aspect-ratio: 16/9;} }
+    .bottomImg img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .featList{
+      display:grid;
+      gap:10px;
+    }
+    .featItem{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.92);
+      border-radius:16px;
+      padding:12px 12px;
+    }
+    .tickIcon{
+      width:20px; height:20px; border-radius:8px;
+      background:rgba(34,197,94,.10);
+      border:1px solid rgba(34,197,94,.30);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--green);
+      font-weight:1000;
+      flex:0 0 auto;
+      margin-top:2px;
+      font-size:12px;
+    }
+    .featItem b{display:block; margin-bottom:2px; font-size:13px}
+    .featItem span{color:var(--muted); font-size:12px}
+
+    /* ===== Sticky bottom bar ===== */
+    .sticky{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      background:rgba(255,255,255,.92);
+      border-top:1px solid rgba(15,23,42,.12);
+      padding:10px 12px;
+      z-index:50;
+      backdrop-filter: blur(10px);
+    }
+    .sticky .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .sticky .txt{font-size:12px; color:var(--muted)}
+    @media(max-width:700px){ .sticky .txt{display:none} }
+
+     .disclaimer{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+      opacity:.95;
+    }
+  </style>
+
+  <script type="text/javascript" src="https://inpmz.ttrk.io/track.js?rtkcmpid=6997f331a801952e7af31036"></script>
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav">
+    <div class="nav__inner">
+      <div class="brand">
+        <div class="logoMark">CU</div>
+        <div>Work Management Guide</div>
+      </div>
+
+      <div class="nav__right">
+        <nav class="navlinks" aria-label="Primary">
+          <a class="active" href="index.html">Home</a>
+          <a href="comparison.html">Comparison</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+
+      <!-- ===== HERO SECTION (2-COL) ===== -->
+      <div class="hero2">
+        <div class="hero2__left">
+          <h1>Manage work in one place with <span class="hglow">ClickUp</span></h1>
+
+          <p class="sub">
+            ClickUp is a popular work OS for tasks, docs, goals, and team collaboration.
+            Compare key features below, then open plans and pricing on the official website.
+          </p>
+
+          <div class="btnrow">
+            <a class="btn primary" id="ctaMain" href="#" rel="nofollow noopener" target="_blank">
+              See Plans & Pricing → (Official Site)
+            </a>
+            <a class="btn secondary" href="comparison.html">
+              Compare Features
+            </a>
+          </div>
+
+          <p class="disclosure">
+            Disclosure: We may earn a commission from partner links. This page is NOT the official ClickUp website.
+          </p>
+
+          <div class="offerStrip pink">
+            <a class="offerCTA" id="ctaTrial" href="#" rel="nofollow noopener" target="_blank">Get started. It's FREE →</a>
+            <div class="offerTag"><span class="offerDot"></span><b>Save upto 30% with yearly, get a demo</b></div>
+          </div>
+        </div>
+
+        <div class="hero2__right">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=70"
+            alt="Team collaboration"
+            loading="lazy"
+          />
+
+          <!-- ✅ ADDED: keywords on right side (below image) -->
+          <div class="kwBox" aria-label="Related tools">
+            <div class="kwTitle">Also compared with</div>
+            <div class="kwTags">
+              <span class="kwTag">wrike</span>
+              <span class="kwTag">lucidchart</span>
+              <span class="kwTag">Miro</span>
+              <span class="kwTag">Basecamp</span>
+              <span class="kwTag">Smartsheet</span>
+              <span class="kwTag">notion</span>
+              <span class="kwTag">airtable</span>
+              <span class="kwTag">asana</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTIONAL: trust row under hero (remove if you don't want) -->
+      <div class="trustBar">
+        <div class="trust">
+          <div class="ico">🔒</div>
+          <div>
+            <b>No signup on this page</b>
+            <span>Buttons open the provider website in a new tab.</span>
+          </div>
+        </div>
+
+        <div class="trust">
+          <div class="ico">⚡</div>
+          <div>
+            <b>Quick comparison</b>
+            <span>Most teams compare in under 2 minutes.</span>
+          </div>
+        </div>
+
+        <div class="trust">
+          <div class="ico">✓</div>
+          <div>
+            <b>Clean, honest guide</b>
+            <span>No hype — just the key features teams need.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== NEW BOTTOM SECTION (FULL-WIDTH IMAGE + LIST) ===== -->
+      <div class="bottomSection">
+        <div class="bottomImg">
+          <img
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2200&q=70"
+            alt="Team working with a planning board"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="featList">
+          <div class="featItem">
+            <div class="tickIcon">✓</div>
+            <div>
+              <b>Manage tasks your way</b>
+              <span>Lists, boards, calendars and custom views for different workflows.</span>
+            </div>
+          </div>
+
+          <div class="featItem">
+            <div class="tickIcon">✓</div>
+            <div>
+              <b>Docs, wikis and knowledge base</b>
+              <span>Keep documentation in one place and link it directly to work.</span>
+            </div>
+          </div>
+
+          <div class="featItem">
+            <div class="tickIcon">✓</div>
+            <div>
+              <b>Dashboards and reporting</b>
+              <span>Track progress, workloads and performance with live dashboards.</span>
+            </div>
+          </div>
+
+          <div class="featItem">
+            <div class="tickIcon">✓</div>
+            <div>
+              <b>Automation and templates</b>
+              <span>Reduce manual work with automations, reusable templates and workflows.</span>
+            </div>
+          </div>
+
+          <div class="featItem">
+            <div class="tickIcon">✓</div>
+            <div>
+              <b>Team collaboration</b>
+              <span>Comments, mentions and real-time updates keep everyone aligned.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="margin-top:12px">
+       Affiliate disclosure: This website contains affiliate links. If you click a link and sign up or purchase, we may earn a commission at no additional cost to you. We do not claim to represent any provider officially. Product names, logos, and trademarks are the property of their respective owners and are used only for identification and comparison. Always verify features, pricing, and terms on the provider’s website before making a decision.
+This page is NOT the official Atlassian website.<br>
+        This page is NOT the official ClickUp website.<br>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms and Condition</a></p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Sticky CTA -->
+  <div class="sticky">
+    <div class="inner">
+      <div class="txt">Compare plans, features & pricing on the ClickUp website.</div>
+      <a class="btn primary" id="ctaSticky" href="#" rel="nofollow noopener" target="_blank">Check Pricing →</a>
+    </div>
+  </div>
+
+  <script>
+    const OUT_URL = "https://inpmz.ttrk.io/click";
+    const ctas = ["ctaMain","ctaTrial","ctaSticky"];
+
+    ctas.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = OUT_URL;
+    });
+
+    function trackOutbound(label){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "outbound_click",
+        outbound_label: label,
+        outbound_url: OUT_URL
+      });
+    }
+
+    ctas.forEach(id=>{
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.addEventListener("click", function(){ trackOutbound(id); });
+    });
+  </script>
+</body>
+</html>
